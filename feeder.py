@@ -11,6 +11,3 @@ def hello():
 @app.route('/feed')
 def feed():
     return 'OK ! I drop some food.'
-
-if __name__ == '__main__':
-   app.run(debug=True, port=port, host=host)

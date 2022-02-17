@@ -23,12 +23,7 @@ touch env.py
 ```
 
 ## Step 6 : Network configurations
-Put your environment variables in the env.py file:
-```python
-host = '0.0.0.0' # for internet visibility
-port = '4600' # put the port you want to use (for exemple 4600)
-```
-Go on your internet router panel and configure your DNS define static IP to your Raspberry Pi.     
+Go on your internet router panel and configure your DHCP to define static IP to your Raspberry Pi.     
 Open the port number in your router panel and configure it to your Raspberry Pi. (tcp protocol)
 
 ## Step 7 : Start the service
