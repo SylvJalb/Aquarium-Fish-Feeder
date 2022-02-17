@@ -5,6 +5,7 @@ from flask import request
 from pytz import timezone
 
 from env import *
+from servo import *
 
 app = Flask(__name__)
 
@@ -31,6 +32,7 @@ def feed():
         when = request.form['feed']
         if when == 'now':
             # feed now
+            feedOneTime()
             with open(log_file, 'a') as f:
                 # write time without microseconds
                 f.write("\n" + str(datetime.datetime.now(timezone(timezone_name)).replace(microsecond=0)))

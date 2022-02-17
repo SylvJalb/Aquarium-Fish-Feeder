@@ -19,7 +19,11 @@ cd Aquarium-Fish-Feeder
 ## Step 5 : Installations
 ```bash
 pip install -r requirements.txt
-touch env.py
+nano env.py
+```
+then define your environment variables in env.py:
+```python
+timezone_name = "Europe/Paris" # Your timezone
 ```
 
 ## Step 6 : Network configurations
