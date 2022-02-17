@@ -24,6 +24,8 @@ nano env.py
 then define your environment variables in env.py:
 ```python
 timezone_name = "Europe/Paris" # Your timezone
+pwm_gpio = 12 #Use pin 12 for PWM signal
+frequence = 50
 ```
 
 ## Step 6 : Network configurations
@@ -34,5 +36,24 @@ Open the port number in your router panel and configure it to your Raspberry Pi.
 ```bash
 ./run.sh
 ```
+----------
+If you want to automatically start the service at boot, you modify your /etc/rc.local file:
+```bash
+sudo nano /etc/rc.local
+```
+and add the following line (before the `exit 0` line):
+```bash
+/home/pi/Aquarium-Fish-Feeder/run.sh &
+```
+----------
+
 
 ## Step 8 : IFTTT configuration
+Go on your IFTTT account and create a new webhook.
+Add a Applet : **IF** you condition... **THEN** use webhook like this:
+
+<img src="./images/IFTTT.png" width="300px">
+
+# Log visualization
+Now you can see the logs (dates when the feeder have been feeded) on this link:     
+http://YOUR_IP_ADDRESS:PORT/feed
