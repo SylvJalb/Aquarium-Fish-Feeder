@@ -9,7 +9,7 @@ def hello():
     return 'Hello, World!'
 
 @app.route('/feed')
-def hello():
+def feed():
     return 'OK ! I drop some food.'
 
 if __name__ == '__main__':
