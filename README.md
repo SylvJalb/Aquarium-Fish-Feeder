@@ -12,25 +12,28 @@
 
 ## Step 4 : Import the repo on your Raspberry Pi
 ```bash
-git clone git@github.com:SylvJalb/Aquarium-Fish-Feeder.git
+git clone https://github.com/SylvJalb/Aquarium-Fish-Feeder.git
 cd Aquarium-Fish-Feeder
 ```
 
 ## Step 5 : Installations
 ```bash
 pip install -r requirements.txt
-chmod +x run.sh
-mkdir env.py
+touch env.py
 ```
 
-## Step 6 : Configurations
+## Step 6 : Network configurations
 Put your environment variables in the env.py file:
 ```python
-host = 'YOUR_IP_ADDRESS'
-port = '80'
+host = '0.0.0.0' # for internet visibility
+port = '4600' # put the port you want to use (for exemple 4600)
 ```
+Go on your internet router panel and configure your DNS define static IP to your Raspberry Pi.     
+Open the port number in your router panel and configure it to your Raspberry Pi. (tcp protocol)
 
 ## Step 7 : Start the service
 ```bash
 ./run.sh
 ```
+
+## Step 8 : IFTTT configuration
