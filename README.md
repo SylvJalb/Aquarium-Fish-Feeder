@@ -57,3 +57,7 @@ Add a Applet : **IF** you condition... **THEN** use webhook like this:
 # Log visualization
 Now you can see the logs (dates when the feeder have been feeded) on this link:     
 http://YOUR_IP_ADDRESS:PORT/feed
+
+# Sources
+https://raspberry-pi.fr/servomoteur-raspberry-pi/       
+https://pythonbasics.org/flask-http-methods/        
