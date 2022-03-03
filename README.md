@@ -2,6 +2,16 @@
 
 ## Step 1 : Print alls parts
 
+Find all stl files in the folder "3D_print" and print them.     
+Instructions:   
+- Nozzle: 0.4 mm
+- Filament: PLA
+- Layer height: 0.2 mm
+- Infill: 20%
+- Support: Yes (60°)
+- Wall thickness: 2.0 mm (5 wall lines count)
+- Disable "Union overlapping Volumes"
+
 ## Step 2 : Assemble all parts
 
 ## Step 3 : Install raspbian on your Raspberry Pi
