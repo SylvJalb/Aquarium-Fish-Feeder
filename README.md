@@ -2,14 +2,16 @@
 
 ## Step 1 : Print alls parts
 
+For this, you need a 3D printer and ~100g of plastic (PLA).     
+
 Find all stl files in the folder "3D_print" and print them.     
 Instructions:   
 - Nozzle: 0.4 mm
 - Filament: PLA
 - Layer height: 0.2 mm
-- Infill: 20%
-- Support: Yes (60°)
-- Wall thickness: 2.0 mm (5 wall lines count)
+- Infill: 10%
+- Support: Yes for `Holder` (60°), No for Other parts
+- Wall thickness: 2.0 mm (5 wall lines count) for `Holder`, By default for Other parts
 - Disable "Union overlapping Volumes"
 
 ## Step 2 : Assemble all parts
