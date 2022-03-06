@@ -31,9 +31,10 @@ cd Aquarium-Fish-Feeder
 ## Step 5 : Installations
 ```bash
 pip3 install -r requirements.txt
-nano env.py
 ```
-then define your environment variables in env.py:
+Make sure you have gunicorn installed. Do the command `which gunicorn` and make sure you have the good path in `run.sh` (last line).   
+
+Then define your environment variables in env.py (`nano env.py`):
 ```python
 timezone_name = "Europe/Paris" # Your timezone
 pwm_gpio = 12 #Use pin 12 for PWM signal
@@ -57,22 +58,23 @@ If you want to automatically start the service at boot, create `/etc/systemd/sys
 ```bash
 sudo nano /etc/systemd/system/feeder.service
 ```
-and you must have something like this:  
+Paste this content, then **modify paths** to your files:  
 ```bash
 [Unit]
 Description=feeder service
-After=network.target
 
 [Service]
 User=pi
 WorkingDirectory=/home/pi/Aquarium-Fish-Feeder
-ExecStart=run.sh
+ExecStart=/bin/bash /home/pi/Aquarium-Fish-Feeder/run.sh
 Restart=always
 
 [Install]
 WantedBy=multi-user.target
 ```     
-Then, do `sudo systemctl enable feeder.service` to start the service at boot.
+Then, do `sudo systemctl enable feeder.service` to activate the auto-start of the service after each startup.
+
+To start the service, do `sudo systemctl start feeder.service`
 
 ----------
 
