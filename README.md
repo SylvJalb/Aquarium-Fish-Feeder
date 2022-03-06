@@ -30,7 +30,7 @@ cd Aquarium-Fish-Feeder
 
 ## Step 5 : Installations
 ```bash
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 nano env.py
 ```
 then define your environment variables in env.py:
@@ -40,7 +40,7 @@ pwm_gpio = 12 #Use pin 12 for PWM signal
 frequence = 50
 
 # Positions of the servo (in degrees)
-posFeed = 0     #Position to drop the food
+posFeed = 160   #Position to drop the food
 posReload = 30  #Position to reload the food
 ```
 
@@ -53,14 +53,27 @@ Open the port number in your router panel and configure it to your Raspberry Pi.
 ./run.sh
 ```
 ----------
-If you want to automatically start the service at boot, you modify your /etc/rc.local file:
+If you want to automatically start the service at boot, create `/etc/systemd/system/feeder.service` file:
 ```bash
-sudo nano /etc/rc.local
+sudo nano /etc/systemd/system/feeder.service
 ```
-and add the following line (before the `exit 0` line):
+and you must have something like this:  
 ```bash
-/home/pi/Aquarium-Fish-Feeder/run.sh &
-```
+[Unit]
+Description=feeder service
+After=network.target
+
+[Service]
+User=pi
+WorkingDirectory=/home/pi/Aquarium-Fish-Feeder
+ExecStart=run.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+```     
+Then, do `sudo systemctl enable feeder.service` to start the service at boot.
+
 ----------
 
 
