@@ -26,13 +26,14 @@ def feedOneTime():
     GPIO.setup(pwm_gpio, GPIO.OUT)
     pwm = GPIO.PWM(pwm_gpio, frequence)
 
-    #Go at 90°
-    pwm.start(angle_to_percent(0))
+    # Go at posReload° position to reload the servo
+    # Go slowly to avoid damage
+    pwm.start(angle_to_percent(posReload))
     time.sleep(2)
 
-    #Finish at 180°
-    pwm.ChangeDutyCycle(angle_to_percent(30))
-    time.sleep(2)
+    # Finish at posFeed° position to drop the food
+    pwm.ChangeDutyCycle(angle_to_percent(posFeed))
+    time.sleep(1)
 
     #Close GPIO & cleanup
     pwm.stop()

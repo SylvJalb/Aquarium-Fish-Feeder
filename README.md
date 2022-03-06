@@ -38,6 +38,10 @@ then define your environment variables in env.py:
 timezone_name = "Europe/Paris" # Your timezone
 pwm_gpio = 12 #Use pin 12 for PWM signal
 frequence = 50
+
+# Positions of the servo (in degrees)
+posFeed = 0     #Position to drop the food
+posReload = 30  #Position to reload the food
 ```
 
 ## Step 6 : Network configurations
