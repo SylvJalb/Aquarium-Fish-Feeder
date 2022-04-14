@@ -15,6 +15,8 @@ Instructions:
 - Disable "Union overlapping Volumes"
 
 ## Step 2 : Assemble all parts
+For that, you can see my video [on YouTube](https://www.youtube.com/watch?v=yZgBFvdJES4). ([5:02](https://youtu.be/yZgBFvdJES4?t=302))    
+[![Sylvain Jalbert - YouTube](https://img.youtube.com/vi/yZgBFvdJES4/0.jpg)](https://www.youtube.com/watch?v=yZgBFvdJES4)
 
 ## Step 3 : Install raspbian on your Raspberry Pi
 1. Download [Raspbian OS](https://howtoraspberrypi.com/downloads/)    
